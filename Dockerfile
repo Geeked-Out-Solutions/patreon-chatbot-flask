@@ -7,4 +7,5 @@ WORKDIR /app/web
 RUN ls -lah
 RUN pip3 install -r requirements.txt
 ENTRYPOINT ["python3"]
+RUN ["python3 -m spacy download en"]
 CMD ["app.py"]
