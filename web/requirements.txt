@@ -1,1 +1,3 @@
 Flask
+rasa_core
+rasa_nlu
