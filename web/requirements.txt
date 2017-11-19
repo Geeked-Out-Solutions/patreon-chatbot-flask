@@ -1,3 +1,4 @@
 Flask
+pypandoc
 rasa_core
 rasa_nlu
