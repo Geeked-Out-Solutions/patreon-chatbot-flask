@@ -6,5 +6,5 @@ COPY . /app
 WORKDIR /app/web
 RUN ls -lah
 RUN pip3 install -r requirements.txt
-ENTRYPOINT ["python"]
+ENTRYPOINT ["python3"]
 CMD ["app.py"]
