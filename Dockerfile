@@ -9,5 +9,5 @@ RUN git clone https://github.com/Geeked-Out-Solutions/patreon-rasa-model.git
 RUN cd patreon-rasa-model
 RUN ls -lah
 ENTRYPOINT ["python3"]
-RUN ["python3 -m spacy download en"]
+CMD ["python3 -m spacy download en"]
 CMD ["app.py"]
