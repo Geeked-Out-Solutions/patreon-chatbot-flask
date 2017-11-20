@@ -10,9 +10,7 @@ RUN cd patreon-rasa-model
 RUN ls -lah
 ENTRYPOINT ["python3"]
 WORKDIR /app/web/patreon-rasa-model
-CMD ["python3 -m spacy download en"]
-CMD ["python3 -m rasa_nlu.train -c nlu_model_config.json --fixed_model_name current"]
-CMD ["python3 -m rasa_core.train -s data/stories.md -d domain.yml -o models/dialogue"]
+RUN python3 -m spacy download en
+RUN python3 -m rasa_nlu.train -c nlu_model_config.json --fixed_model_name current
+RUN python3 -m rasa_core.train -s data/stories.md -d domain.yml -o models/dialogue
 CMD ["python3 -m rasa_core.server -d models/dialogue -u models/nlu/current -o out.log &"]
-WORKDIR /app/web
-CMD ["app.py"]
