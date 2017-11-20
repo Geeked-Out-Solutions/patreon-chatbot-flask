@@ -6,9 +6,12 @@ COPY . /app
 WORKDIR /app/web
 RUN \
 pip3 install -r requirements.txt && \
+git clone git clone https://github.com/RasaHQ/rasa_core.git && \
+cd rasa_core && \
+pip3 install -r requirements.txt && \
+python3 setup.py install && \
 git clone https://github.com/Geeked-Out-Solutions/patreon-rasa-model.git && \
 cd patreon-rasa-model && \
-ENTRYPOINT ["python3"]
 WORKDIR /app/web/patreon-rasa-model
 RUN  \
 python3 -m spacy download en && \
