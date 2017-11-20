@@ -6,7 +6,7 @@ COPY . /app
 WORKDIR /app/web
 RUN \
 pip3 install -r requirements.txt && \
-git clone git clone https://github.com/RasaHQ/rasa_core.git && \
+git clone https://github.com/RasaHQ/rasa_core.git && \
 cd rasa_core && \
 pip3 install -r requirements.txt && \
 python3 setup.py install && \
