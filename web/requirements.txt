@@ -1,3 +1,4 @@
+-e .
 Flask
 gevent==1.2.1
 klein==17.2.0
