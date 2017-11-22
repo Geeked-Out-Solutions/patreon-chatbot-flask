@@ -15,6 +15,7 @@ cd patreon-rasa-model && \
 WORKDIR /app/web/patreon-rasa-model
 ENTRYPOINT ["python3"]
 RUN  \
+pip3 install pypandoc && \
 python3 -m spacy download en && \
 python3 -m rasa_nlu.train -c nlu_model_config.json --fixed_model_name current && \
 python3 -m rasa_core.train -s data/stories.md -d domain.yml -o models/dialogue && \
