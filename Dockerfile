@@ -7,7 +7,7 @@ COPY . /app
 WORKDIR /app/web
 RUN \
 ls -lah && \
-pip3 install --no-cache-dir -r requirements.txt && \
+pip3 install --no-cache-dir -r /app/web/requirements.txt && \
 git clone https://github.com/RasaHQ/rasa_core.git && \
 cd rasa_core && \
 pip3 install --no-cache-dir -r requirements.txt && \
