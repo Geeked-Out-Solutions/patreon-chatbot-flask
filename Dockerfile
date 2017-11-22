@@ -12,7 +12,7 @@ pip3 install --no-cache-dir -r requirements.txt && \
 git clone https://github.com/RasaHQ/rasa_core.git && \
 cd rasa_core && \
 pip3 install --no-cache-dir -r requirements.txt && \
-python3 setup.py install && \
+python3 setup.py install
 WORKDIR /app/data
 COPY . ${RASA_MODEL}
 RUN \ 
