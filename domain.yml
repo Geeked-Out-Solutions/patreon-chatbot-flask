@@ -1,0 +1,26 @@
+intents:
+  - greet
+  - thanks
+  - goodbye
+  - help
+
+
+action_factory: remote
+
+templates:
+  utter_greet:
+    - "hey there!"    # variable will be filled by slot with the same name or by custom code
+  utter_goodbye:
+    - "goodbye :("
+    - "bye bye"              # multiple templates will allow the bot to randomly pick from them
+  utter_default:
+    - "default message"
+  utter_thanks:
+    - "you are welcome"
+
+actions:
+  - utter_default
+  - utter_greet
+  - utter_goodbye
+  - utter_thanks
+  - help
