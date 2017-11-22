@@ -8,7 +8,7 @@ RUN \
 pip3 install --no-cache-dir -r requirements.txt && \
 git clone https://github.com/RasaHQ/rasa_core.git && \
 cd rasa_core && \
-ls -lah
+ls -lah && \
 pip3 install --no-cache-dir -r requirements.txt && \
 python3 setup.py install && \
 git clone https://github.com/Geeked-Out-Solutions/patreon-rasa-model.git
