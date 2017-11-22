@@ -5,7 +5,7 @@ apt-get update -y && \
 apt-get install -y python3-pip python3-dev build-essential git
 WORKDIR /app/web
 RUN \
-ls -lah && \
+pwd && \
 pip3 install --no-cache-dir -r requirements.txt && \
 git clone https://github.com/RasaHQ/rasa_core.git && \
 cd rasa_core && \
