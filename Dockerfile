@@ -13,7 +13,6 @@ python3 setup.py install && \
 git clone https://github.com/Geeked-Out-Solutions/patreon-rasa-model.git && \
 cd patreon-rasa-model && \
 WORKDIR /app/web/patreon-rasa-model
-ENTRYPOINT ["python3"]
 RUN  \
 pip3 install pypandoc && \
 python3 -m spacy download en && \
