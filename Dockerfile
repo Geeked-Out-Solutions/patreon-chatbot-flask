@@ -8,6 +8,8 @@ COPY . /app
 WORKDIR /app
 RUN \
 pip3 install pypandoc && \
+ls -lah && \
+pwd && \
 pip3 install --no-cache-dir -r requirements.txt && \
 git clone https://github.com/RasaHQ/rasa_core.git && \
 cd rasa_core && \
