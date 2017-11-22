@@ -21,5 +21,5 @@ RUN \
 python3 -m spacy download en && \
 python3 -m rasa_nlu.train -c /app/nlu_model_config.json --fixed_model_name current && \
 python3 -m rasa_core.train -s /app/data/stories.md -d /app/domain.yml -o /app/data/models/dialogue
-#ENTRYPOINT ["python3 -m rasa_core.server -d /app/data/models/dialogue -u /app/data/models/nlu/current"]
+ENTRYPOINT ["python3 -m rasa_core.server -d /app/data/models/dialogue -u /app/data/models/nlu/current"]
 
