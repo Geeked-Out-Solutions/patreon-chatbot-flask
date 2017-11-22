@@ -16,6 +16,7 @@ git clone https://github.com/Geeked-Out-Solutions/patreon-rasa-model.git
 WORKDIR /app/web/patreon-rasa-model
 RUN \ 
 python3 -m spacy download en && \
+ls -lah
 python3 -m rasa_nlu.train -c nlu_model_config.json --fixed_model_name current && \
 python3 -m rasa_core.train -s data/stories.md -d domain.yml -o models/dialogue && \
 python3 -m rasa_core.server -d models/dialogue -u models/nlu/current -o out.log
