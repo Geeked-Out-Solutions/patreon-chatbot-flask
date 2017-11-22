@@ -15,11 +15,10 @@ pip3 install --no-cache-dir -r requirements.txt && \
 python3 setup.py install && \
 git clone https://github.com/Geeked-Out-Solutions/patreon-rasa-model.git
 WORKDIR /app/web/patreon-rasa-model
+COPY . ${RASA_MODEL}
 RUN \ 
 python3 -m spacy download en && \
-pwd && \
-ls -lah && \
-python3 -m rasa_nlu.train -c ${RASA_MODEL}\nlu_model_config.json --fixed_model_name current && \
-python3 -m rasa_core.train -s ${RASA_MODEL}\data/stories.md -d ${RASA_MODEL}\domain.yml -o ${RASA_MODEL}\models/dialogue
-CMD ["python3", "-m rasa_core.server -d ${RASA_MODEL}\models/dialogue -u ${RASA_MODEL}\models/nlu/current -o out.log"]
+python3 -m rasa_nlu.train -c ${RASA_MODEL}/nlu_model_config.json --fixed_model_name current && \
+python3 -m rasa_core.train -s ${RASA_MODEL}/data/stories.md -d ${RASA_MODEL}/domain.yml -o ${RASA_MODEL}/models/dialogue
+CMD ["python3", "-m rasa_core.server -d ${RASA_MODEL}/models/dialogue -u ${RASA_MODEL}/models/nlu/current -o out.log"]
 
