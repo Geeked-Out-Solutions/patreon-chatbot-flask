@@ -5,10 +5,10 @@ apt-get update -y && \
 apt-get install -y python3-pip python3-dev build-essential git
 WORKDIR /app/web
 RUN \
+ls -lah && \
 pip3 install --no-cache-dir -r requirements.txt && \
 git clone https://github.com/RasaHQ/rasa_core.git && \
 cd rasa_core && \
-ls -lah && \
 pip3 install --no-cache-dir -r requirements.txt && \
 python3 setup.py install && \
 git clone https://github.com/Geeked-Out-Solutions/patreon-rasa-model.git
