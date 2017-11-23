@@ -1,6 +1,5 @@
 FROM ubuntu:latest
 MAINTAINER Brian Hopkins "brianhh1230@gmail.com"
-ENV RASA_MODEL=/app
 RUN \
 apt-get update -y && \
 apt-get install -y python3-pip python3-dev build-essential git pandoc
@@ -16,7 +15,6 @@ cd rasa_core && \
 pip3 install --no-cache-dir -r requirements.txt && \
 python3 setup.py install
 WORKDIR /app
-COPY . ${RASA_MODEL}
 RUN \ 
 python3 -m spacy download en && \
 python3 -m rasa_core.train -s data/stories.md -d domain.yml -o models/dialogue
