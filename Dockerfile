@@ -15,8 +15,5 @@ cd rasa_core && \
 pip3 install --no-cache-dir -r requirements.txt && \
 python3 setup.py install
 WORKDIR /app
-RUN \ 
-python3 -m spacy download en && \
-python3 -m rasa_core.train -s data/stories.md -d domain.yml -o models/dialogue
 RUN ["chmod", "+x", "entrypoint.sh"]
 ENTRYPOINT ["./entrypoint.sh"]
