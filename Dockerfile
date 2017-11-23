@@ -21,4 +21,4 @@ RUN \
 python3 -m spacy download en && \
 python3 -m rasa_nlu.train -c /app/nlu_model_config.json --fixed_model_name current
 RUN ["chmod", "+x", "entrypoint.sh"]
-ENTRYPOINT ["./entrypoint.sh"]
+#ENTRYPOINT ["./entrypoint.sh"]
