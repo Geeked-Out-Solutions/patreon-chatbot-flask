@@ -7,6 +7,7 @@ apt-get install -y python3-pip python3-dev build-essential git pandoc
 COPY . /app
 WORKDIR /app
 RUN \
+chmod +x entrypoint.sh && \
 pip3 install pypandoc && \
 ls -lah && \
 pwd && \
