@@ -1,6 +1,9 @@
 # patreon-chatbot-flask
 A flask chatbot app using Rasa NLU and Core - in development
 
+Rasa Core Docs - https://core.rasa.ai/tutorial_remote.html
+Rasa NLU Docs - https://nlu.rasa.ai/tutorial.html
+
 ## Building The Image
 1. First clone this repo then cd into that folder and run:
 `docker build -t rasa-core .` you can replace rasa-core with whatever tag/name you want for the image.
